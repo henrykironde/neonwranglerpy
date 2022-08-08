@@ -76,7 +76,7 @@ def stackdatafiles(folder_path, dst, dpID, stack_df=False):
 
         if tables.tableType[i] == "site-all":
             base_files = [os.path.basename(name) for name in file_list]
-            sites = set([s.split(".")[3] for s in base_files])
+            sites = set([s.split(".")[2] for s in base_files])
             for _ in sites:
                 site_list = [s for s in file_list if _ in s]
                 site = ut.get_recent_publications(site_list)
@@ -91,7 +91,7 @@ def stackdatafiles(folder_path, dst, dpID, stack_df=False):
 
         if stack_df:
             out[table_names[i]] = stacked_df
-        stacked_df.to_csv(df_save_path)
+        stacked_df.to_csv(df_save_path, index=False)
 
     out['stackedpath'] = stackedpath
 
