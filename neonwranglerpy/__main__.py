@@ -1,3 +1,5 @@
+"""CLI entry point."""
+
 import logging
 import sys
 
@@ -7,11 +9,7 @@ _logger = logging.getLogger(__name__)
 
 
 def setup_logging(loglevel):
-    """Setup basic logging
-
-    Args:
-      loglevel (int): minimum loglevel for emitting messages
-    """
+    """Setup basic logging."""
     logformat = "[%(asctime)s] %(levelname)s:%(name)s:%(message)s"
     logging.basicConfig(level=loglevel,
                         stream=sys.stdout,
@@ -27,6 +25,7 @@ def main():
     else:
         # parse args for CLI interface
         args = parser.parse_args()
+        print(args)
 
 
 if __name__ == "__main__":

@@ -11,6 +11,8 @@ ignore =
     D401,
     D403,
     W292,
-    D100
+    D100,
+    D104,
+    D401,
 max-complexity = 90
 max-line-length = 90
